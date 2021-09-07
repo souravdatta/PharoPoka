@@ -1,5 +1,5 @@
 Class {
-	#name : #PokaReaderTests,
+	#name : #PokaReaderTest,
 	#superclass : #TestCase,
 	#instVars : [
 		'reader'
@@ -8,30 +8,30 @@ Class {
 }
 
 { #category : #initialization }
-PokaReaderTests >> setUp [
+PokaReaderTest >> setUp [
 	reader := PokaReader new.
 ]
 
 { #category : #tests }
-PokaReaderTests >> testCompleteNext [
+PokaReaderTest >> testCompleteNext [
 	reader reset: 'A'.
 	reader next.
 	self assert: reader next equals: #EOF
 ]
 
 { #category : #tests }
-PokaReaderTests >> testEmptyNext [
+PokaReaderTest >> testEmptyNext [
 	self assert: reader next equals: #EOF
 ]
 
 { #category : #tests }
-PokaReaderTests >> testNext [
+PokaReaderTest >> testNext [
 	reader reset: 'program'.
 	self assert: reader next equals: $p
 ]
 
 { #category : #tests }
-PokaReaderTests >> testPutBack [
+PokaReaderTest >> testPutBack [
 	reader reset: 'ok'.
 	reader next;
 		putBack: $a.
@@ -40,13 +40,13 @@ PokaReaderTests >> testPutBack [
 ]
 
 { #category : #tests }
-PokaReaderTests >> testPutBackEmpty [
+PokaReaderTest >> testPutBackEmpty [
 	reader putBack: $h.
 	self assert: reader next equals: $h
 ]
 
 { #category : #tests }
-PokaReaderTests >> testPutBackEnd [
+PokaReaderTest >> testPutBackEnd [
 	reader reset: ';'.
 	reader next.
 	reader putBack: $=.
