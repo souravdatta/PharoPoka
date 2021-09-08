@@ -2,8 +2,6 @@ Class {
 	#name : #PokaLexer,
 	#superclass : #Object,
 	#instVars : [
-		'token',
-		'lastToken',
 		'reader'
 	],
 	#category : #Poka
