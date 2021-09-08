@@ -10,6 +10,7 @@ Class {
 
 { #category : #initialization }
 PokaLexerTest >> setUp [ 
+	super setUp.
 	reader := PokaReader new reset: 'program hello(x := 23.9);'.
 	lexer := PokaLexer new reset: reader
 ]

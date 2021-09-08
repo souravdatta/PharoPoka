@@ -9,6 +9,7 @@ Class {
 
 { #category : #initialization }
 PokaReaderTest >> setUp [
+	super setUp.
 	reader := PokaReader new.
 ]
 
